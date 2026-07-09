@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI競馬予想 実績公開 | 全予想・全結果</title>
+<style>
+:root {
+  --surface: #fcfcfb; --card: #ffffff;
+  --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #8a8880;
+  --accent: #2a78d6; --accent-soft: #cde2fb;
+  --good: #0ca30c; --line: #e8e7e3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #1a1a19; --card: #232322;
+    --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8a8880;
+    --accent: #3987e5; --accent-soft: #184f95;
+    --good: #0ca30c; --line: #383835;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--surface); color: var(--ink);
+  font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  line-height: 1.6; padding: 24px 16px 64px; }
+.wrap { max-width: 720px; margin: 0 auto; }
+h1 { font-size: 1.35rem; margin-bottom: 4px; }
+.lead { color: var(--ink-2); font-size: .85rem; margin-bottom: 24px; }
+.lead b { color: var(--ink); }
+
+.kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 28px; }
+@media (min-width: 560px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 12px; }
+.kpi .v { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: .72rem; color: var(--ink-2); margin-top: 2px; }
+.kpi.hero { border-color: var(--accent); }
+.kpi.hero .v { color: var(--accent); }
+
+h2 { font-size: 1rem; margin: 32px 0 10px; }
+table { width: 100%; border-collapse: collapse; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: .85rem; }
+th { text-align: left; color: var(--ink-2); font-weight: 600; font-size: .72rem;
+  padding: 8px 10px; border-bottom: 1px solid var(--line); }
+td { padding: 7px 10px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: none; }
+.num { font-variant-numeric: tabular-nums; }
+.sub { color: var(--ink-3); font-size: .78rem; }
+.wk { white-space: nowrap; }
+.barcell { width: 30%; }
+.bar { height: 8px; background: var(--accent); border-radius: 4px; min-width: 2px; }
+
+.hi-list { list-style: none; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px 14px; font-size: .85rem; }
+.hi-list li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+.hi-list li:last-child { border-bottom: none; }
+.hi-date { color: var(--ink-3); margin-right: 4px; }
+.hi-pay { color: var(--good); font-weight: 700; margin-left: 6px; }
+
+.log-table .ts { color: var(--ink-3); font-size: .75rem; white-space: nowrap; }
+.log-table .icon-cell { text-align: center; }
+.log-table tr.lost td { color: var(--ink-3); }
+
+.note { margin-top: 28px; font-size: .78rem; color: var(--ink-2);
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.note b { color: var(--ink); }
+footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🏇 AI競馬予想 実績公開</h1>
+  <p class="lead">機械学習モデルによる全レース予想を<b>発走前にX(Twitter)へ投稿</b>し、
+  その全件をここで照合・公開しています。当たった予想だけを選んで見せることはありません。</p>
+
+  <div class="kpis">
+    <div class="kpi hero"><div class="v">53.5%</div><div class="l">◎複勝率（3着以内）</div></div>
+    <div class="kpi"><div class="v">30.2%</div><div class="l">◎勝率（1着）</div></div>
+    <div class="kpi"><div class="v">202R</div><div class="l">検証レース数（全公開）</div></div>
+    <div class="kpi"><div class="v">51%</div><div class="l">直近週の◎複勝率</div></div>
+  </div>
+
+  <h2>週別成績</h2>
+  <table>
+    <tr><th>週</th><th>予想数</th><th>◎1着</th><th>◎3着内</th><th>複勝率</th></tr>
+    
+        <tr>
+          <td class="wk">6/15〜6/21</td>
+          <td class="num">61R</td>
+          <td class="num">12 <span class="sub">(20%)</span></td>
+          <td class="num">28 <span class="sub">(46%)</span></td>
+          <td class="barcell"><div class="bar" style="width:46%"></div></td>
+        </tr>
+        <tr>
+          <td class="wk">6/22〜6/28</td>
+          <td class="num">71R</td>
+          <td class="num">25 <span class="sub">(35%)</span></td>
+          <td class="num">44 <span class="sub">(62%)</span></td>
+          <td class="barcell"><div class="bar" style="width:62%"></div></td>
+        </tr>
+        <tr>
+          <td class="wk">6/29〜7/5</td>
+          <td class="num">70R</td>
+          <td class="num">24 <span class="sub">(34%)</span></td>
+          <td class="num">36 <span class="sub">(51%)</span></td>
+          <td class="barcell"><div class="bar" style="width:51%"></div></td>
+        </tr>
+  </table>
+
+  <h2>◎1着 好配当ハイライト</h2>
+  <ul class="hi-list">
+        <li><span class="hi-date">6/20</span> 阪神05R
+          ◎9番 → <b>1着</b>
+          <span class="hi-pay">単勝 1,790円</span></li>
+        <li><span class="hi-date">6/20</span> 函館03R
+          ◎10番 → <b>1着</b>
+          <span class="hi-pay">単勝 660円</span></li>
+        <li><span class="hi-date">7/4</span> 福島07R
+          ◎7番 → <b>1着</b>
+          <span class="hi-pay">単勝 520円</span></li>
+        <li><span class="hi-date">6/27</span> 函館01R
+          ◎15番 → <b>1着</b>
+          <span class="hi-pay">単勝 500円</span></li>
+        <li><span class="hi-date">6/28</span> 小倉02R
+          ◎9番 → <b>1着</b>
+          <span class="hi-pay">単勝 430円</span></li>
+  </ul>
+
+  <h2>全予想ログ（発走前タイムスタンプ付き）</h2>
+  <table class="log-table">
+    <tr><th>予想投稿時刻</th><th>レース</th><th>本命</th><th>結果(1-2-3着)</th><th>判定</th></tr>
+    
+        <tr class="won">
+          <td class="ts">7/5 16:02</td>
+          <td>小倉12R</td>
+          <td class="num">◎10</td>
+          <td class="num">10-2-15</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 15:17</td>
+          <td>小倉11R</td>
+          <td class="num">◎12</td>
+          <td class="num">12-2-9</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 14:42</td>
+          <td>小倉10R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-14-13</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 14:08</td>
+          <td>小倉09R</td>
+          <td class="num">◎5</td>
+          <td class="num">5-2-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 13:32</td>
+          <td>小倉08R</td>
+          <td class="num">◎10</td>
+          <td class="num">3-9-5</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 13:02</td>
+          <td>小倉07R</td>
+          <td class="num">◎14</td>
+          <td class="num">1-13-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 12:32</td>
+          <td>小倉06R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-7-9</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 12:02</td>
+          <td>小倉05R</td>
+          <td class="num">◎9</td>
+          <td class="num">1-11-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 11:12</td>
+          <td>小倉04R</td>
+          <td class="num">◎8</td>
+          <td class="num">6-5-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 10:42</td>
+          <td>小倉03R</td>
+          <td class="num">◎16</td>
+          <td class="num">5-12-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 10:12</td>
+          <td>小倉02R</td>
+          <td class="num">◎10</td>
+          <td class="num">10-7-8</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 09:37</td>
+          <td>小倉01R</td>
+          <td class="num">◎11</td>
+          <td class="num">12-3-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 15:47</td>
+          <td>小倉12R</td>
+          <td class="num">◎12</td>
+          <td class="num">6-1-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 15:02</td>
+          <td>小倉11R</td>
+          <td class="num">◎3</td>
+          <td class="num">3-4-1</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 14:27</td>
+          <td>小倉10R</td>
+          <td class="num">◎12</td>
+          <td class="num">6-8-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 13:52</td>
+          <td>小倉09R</td>
+          <td class="num">◎7</td>
+          <td class="num">7-11-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 13:22</td>
+          <td>小倉08R</td>
+          <td class="num">◎8</td>
+          <td class="num">8-2-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 12:52</td>
+          <td>小倉07R</td>
+          <td class="num">◎4</td>
+          <td class="num">10-9-13</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 12:22</td>
+          <td>小倉06R</td>
+          <td class="num">◎6</td>
+          <td class="num">9-2-15</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 11:52</td>
+          <td>小倉05R</td>
+          <td class="num">◎10</td>
+          <td class="num">3-2-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 11:02</td>
+          <td>小倉04R</td>
+          <td class="num">◎1</td>
+          <td class="num">6-1-16</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 10:32</td>
+          <td>小倉03R</td>
+          <td class="num">◎8</td>
+          <td class="num">8-11-13</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 10:02</td>
+          <td>小倉02R</td>
+          <td class="num">◎13</td>
+          <td class="num">4-8-5</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 09:27</td>
+          <td>小倉01R</td>
+          <td class="num">◎4</td>
+          <td class="num">11-7-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 19:33</td>
+          <td>小倉12R</td>
+          <td class="num">◎12</td>
+          <td class="num">7-13-12</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 15:02</td>
+          <td>小倉11R</td>
+          <td class="num">◎6</td>
+          <td class="num">5-2-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 14:27</td>
+          <td>小倉10R</td>
+          <td class="num">◎3</td>
+          <td class="num">9-11-13</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 13:52</td>
+          <td>小倉09R</td>
+          <td class="num">◎7</td>
+          <td class="num">7-5-1</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 13:22</td>
+          <td>小倉08R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-3-8</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 12:52</td>
+          <td>小倉07R</td>
+          <td class="num">◎9</td>
+          <td class="num">2-4-10</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 12:22</td>
+          <td>小倉06R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-4-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 11:52</td>
+          <td>小倉05R</td>
+          <td class="num">◎10</td>
+          <td class="num">1-7-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 11:02</td>
+          <td>小倉04R</td>
+          <td class="num">◎6</td>
+          <td class="num">10-13-6</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 10:32</td>
+          <td>小倉03R</td>
+          <td class="num">◎4</td>
+          <td class="num">5-4-8</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 10:02</td>
+          <td>小倉02R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-1-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 09:27</td>
+          <td>小倉01R</td>
+          <td class="num">◎9</td>
+          <td class="num">8-1-3</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 15:47</td>
+          <td>小倉12R</td>
+          <td class="num">◎8</td>
+          <td class="num">8-2-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 15:02</td>
+          <td>小倉11R</td>
+          <td class="num">◎2</td>
+          <td class="num">9-13-2</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 14:27</td>
+          <td>小倉10R</td>
+          <td class="num">◎11</td>
+          <td class="num">4-8-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 13:52</td>
+          <td>小倉09R</td>
+          <td class="num">◎4</td>
+          <td class="num">4-2-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 13:22</td>
+          <td>小倉08R</td>
+          <td class="num">◎8</td>
+          <td class="num">3-1-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 12:52</td>
+          <td>小倉07R</td>
+          <td class="num">◎12</td>
+          <td class="num">13-2-12</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 12:22</td>
+          <td>小倉06R</td>
+          <td class="num">◎8</td>
+          <td class="num">9-16-8</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 11:52</td>
+          <td>小倉05R</td>
+          <td class="num">◎6</td>
+          <td class="num">6-2-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 11:02</td>
+          <td>小倉04R</td>
+          <td class="num">◎8</td>
+          <td class="num">4-8-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 10:32</td>
+          <td>小倉03R</td>
+          <td class="num">◎16</td>
+          <td class="num">2-3-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 10:02</td>
+          <td>小倉02R</td>
+          <td class="num">◎10</td>
+          <td class="num">14-3-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 09:27</td>
+          <td>小倉01R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-2-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/21 15:46</td>
+          <td>阪神12R</td>
+          <td class="num">◎12</td>
+          <td class="num">12-3-4</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 15:01</td>
+          <td>阪神11R</td>
+          <td class="num">◎11</td>
+          <td class="num">10-7-11</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 12:21</td>
+          <td>阪神06R</td>
+          <td class="num">◎2</td>
+          <td class="num">9-16-2</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 11:51</td>
+          <td>阪神05R</td>
+          <td class="num">◎3</td>
+          <td class="num">5-6-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 11:01</td>
+          <td>阪神04R</td>
+          <td class="num">◎5</td>
+          <td class="num">15-5-6</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 10:31</td>
+          <td>阪神03R</td>
+          <td class="num">◎5</td>
+          <td class="num">15-1-11</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 10:01</td>
+          <td>阪神02R</td>
+          <td class="num">◎5</td>
+          <td class="num">17-8-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/21 09:26</td>
+          <td>阪神01R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-4-16</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 15:46</td>
+          <td>阪神12R</td>
+          <td class="num">◎3</td>
+          <td class="num">12-8-18</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 15:01</td>
+          <td>阪神11R</td>
+          <td class="num">◎14</td>
+          <td class="num">3-4-12</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 14:26</td>
+          <td>阪神10R</td>
+          <td class="num">◎18</td>
+          <td class="num">6-11-14</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 13:52</td>
+          <td>阪神09R</td>
+          <td class="num">◎6</td>
+          <td class="num">6-5-9</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 13:22</td>
+          <td>阪神08R</td>
+          <td class="num">◎3</td>
+          <td class="num">12-4-13</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 12:52</td>
+          <td>阪神07R</td>
+          <td class="num">◎5</td>
+          <td class="num">5-2-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 12:21</td>
+          <td>阪神06R</td>
+          <td class="num">◎3</td>
+          <td class="num">7-4-16</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 11:51</td>
+          <td>阪神05R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-8-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 11:01</td>
+          <td>阪神04R</td>
+          <td class="num">◎13</td>
+          <td class="num">6-13-9</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 10:31</td>
+          <td>阪神03R</td>
+          <td class="num">◎9</td>
+          <td class="num">1-14-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 10:01</td>
+          <td>阪神02R</td>
+          <td class="num">◎12</td>
+          <td class="num">12-8-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 09:26</td>
+          <td>阪神01R</td>
+          <td class="num">◎5</td>
+          <td class="num">8-4-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 16:01</td>
+          <td>東京12R</td>
+          <td class="num">◎10</td>
+          <td class="num">15-12-10</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 15:16</td>
+          <td>東京11R</td>
+          <td class="num">◎6</td>
+          <td class="num">7-2-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 12:01</td>
+          <td>東京05R</td>
+          <td class="num">◎9</td>
+          <td class="num">8-5-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/21 11:11</td>
+          <td>東京04R</td>
+          <td class="num">◎6</td>
+          <td class="num">6-7-1</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 10:41</td>
+          <td>東京03R</td>
+          <td class="num">◎4</td>
+          <td class="num">7-13-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 10:11</td>
+          <td>東京02R</td>
+          <td class="num">◎2</td>
+          <td class="num">8-2-11</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 09:36</td>
+          <td>東京01R</td>
+          <td class="num">◎9</td>
+          <td class="num">8-11-9</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 16:01</td>
+          <td>東京12R</td>
+          <td class="num">◎10</td>
+          <td class="num">12-1-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 15:16</td>
+          <td>東京11R</td>
+          <td class="num">◎2</td>
+          <td class="num">10-2-4</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 14:42</td>
+          <td>東京10R</td>
+          <td class="num">◎7</td>
+          <td class="num">14-3-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 14:06</td>
+          <td>東京09R</td>
+          <td class="num">◎3</td>
+          <td class="num">7-8-5</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 13:32</td>
+          <td>東京08R</td>
+          <td class="num">◎11</td>
+          <td class="num">1-3-5</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 13:02</td>
+          <td>東京07R</td>
+          <td class="num">◎9</td>
+          <td class="num">2-5-9</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 12:31</td>
+          <td>東京06R</td>
+          <td class="num">◎5</td>
+          <td class="num">2-3-14</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 12:01</td>
+          <td>東京05R</td>
+          <td class="num">◎9</td>
+          <td class="num">1-6-9</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 11:11</td>
+          <td>東京04R</td>
+          <td class="num">◎10</td>
+          <td class="num">2-1-11</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 10:41</td>
+          <td>東京03R</td>
+          <td class="num">◎7</td>
+          <td class="num">7-9-11</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 10:11</td>
+          <td>東京02R</td>
+          <td class="num">◎1</td>
+          <td class="num">7-1-14</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 09:36</td>
+          <td>東京01R</td>
+          <td class="num">◎3</td>
+          <td class="num">14-5-10</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 15:47</td>
+          <td>福島12R</td>
+          <td class="num">◎15</td>
+          <td class="num">8-5-13</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 15:02</td>
+          <td>福島11R</td>
+          <td class="num">◎9</td>
+          <td class="num">7-8-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 14:27</td>
+          <td>福島10R</td>
+          <td class="num">◎5</td>
+          <td class="num">5-1-4</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 13:52</td>
+          <td>福島09R</td>
+          <td class="num">◎3</td>
+          <td class="num">13-11-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/5 13:22</td>
+          <td>福島08R</td>
+          <td class="num">◎1</td>
+          <td class="num">6-4-1</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 12:52</td>
+          <td>福島07R</td>
+          <td class="num">◎15</td>
+          <td class="num">6-12-3</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 12:22</td>
+          <td>福島06R</td>
+          <td class="num">◎1</td>
+          <td class="num">10-8-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 11:52</td>
+          <td>福島05R</td>
+          <td class="num">◎7</td>
+          <td class="num">5-12-14</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 11:03</td>
+          <td>福島04R</td>
+          <td class="num">◎10</td>
+          <td class="num">10-8-15</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 10:32</td>
+          <td>福島03R</td>
+          <td class="num">◎11</td>
+          <td class="num">5-14-3</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 10:02</td>
+          <td>福島02R</td>
+          <td class="num">◎16</td>
+          <td class="num">8-2-11</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/5 09:27</td>
+          <td>福島01R</td>
+          <td class="num">◎5</td>
+          <td class="num">10-11-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 16:02</td>
+          <td>福島12R</td>
+          <td class="num">◎14</td>
+          <td class="num">13-10-16</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 15:17</td>
+          <td>福島11R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-8-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 14:42</td>
+          <td>福島10R</td>
+          <td class="num">◎4</td>
+          <td class="num">4-10-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 14:08</td>
+          <td>福島09R</td>
+          <td class="num">◎9</td>
+          <td class="num">5-7-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 13:32</td>
+          <td>福島08R</td>
+          <td class="num">◎6</td>
+          <td class="num">3-4-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 13:02</td>
+          <td>福島07R</td>
+          <td class="num">◎7</td>
+          <td class="num">7-9-14</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 12:32</td>
+          <td>福島06R</td>
+          <td class="num">◎10</td>
+          <td class="num">4-10-11</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 12:02</td>
+          <td>福島05R</td>
+          <td class="num">◎9</td>
+          <td class="num">1-10-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 11:12</td>
+          <td>福島04R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-16-12</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 10:42</td>
+          <td>福島03R</td>
+          <td class="num">◎12</td>
+          <td class="num">9-8-12</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 10:12</td>
+          <td>福島02R</td>
+          <td class="num">◎3</td>
+          <td class="num">2-7-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 09:37</td>
+          <td>福島01R</td>
+          <td class="num">◎3</td>
+          <td class="num">1-3-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 19:36</td>
+          <td>福島12R</td>
+          <td class="num">◎13</td>
+          <td class="num">8-7-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 15:17</td>
+          <td>福島11R</td>
+          <td class="num">◎12</td>
+          <td class="num">13-8-5</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 14:42</td>
+          <td>福島10R</td>
+          <td class="num">◎4</td>
+          <td class="num">4-10-9</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 14:08</td>
+          <td>福島09R</td>
+          <td class="num">◎6</td>
+          <td class="num">11-1-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 13:32</td>
+          <td>福島08R</td>
+          <td class="num">◎10</td>
+          <td class="num">1-3-10</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 13:02</td>
+          <td>福島07R</td>
+          <td class="num">◎14</td>
+          <td class="num">14-7-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 12:32</td>
+          <td>福島06R</td>
+          <td class="num">◎7</td>
+          <td class="num">6-16-11</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 12:02</td>
+          <td>福島05R</td>
+          <td class="num">◎3</td>
+          <td class="num">13-4-3</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 11:12</td>
+          <td>福島04R</td>
+          <td class="num">◎8</td>
+          <td class="num">8-9-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 10:12</td>
+          <td>福島02R</td>
+          <td class="num">◎12</td>
+          <td class="num">12-7-13</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 09:37</td>
+          <td>福島01R</td>
+          <td class="num">◎7</td>
+          <td class="num">4-2-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 16:06</td>
+          <td>福島12R</td>
+          <td class="num">◎15</td>
+          <td class="num">6-2-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 15:18</td>
+          <td>福島11R</td>
+          <td class="num">◎4</td>
+          <td class="num">4-8-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 14:42</td>
+          <td>福島10R</td>
+          <td class="num">◎9</td>
+          <td class="num">3-1-9</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 14:08</td>
+          <td>福島09R</td>
+          <td class="num">◎6</td>
+          <td class="num">9-6-14</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 13:32</td>
+          <td>福島08R</td>
+          <td class="num">◎13</td>
+          <td class="num">2-9-13</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 13:02</td>
+          <td>福島07R</td>
+          <td class="num">◎5</td>
+          <td class="num">3-16-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 12:32</td>
+          <td>福島06R</td>
+          <td class="num">◎9</td>
+          <td class="num">2-9-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 12:02</td>
+          <td>福島05R</td>
+          <td class="num">◎3</td>
+          <td class="num">3-6-9</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 11:12</td>
+          <td>福島04R</td>
+          <td class="num">◎7</td>
+          <td class="num">3-8-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 10:42</td>
+          <td>福島03R</td>
+          <td class="num">◎5</td>
+          <td class="num">10-6-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 10:12</td>
+          <td>福島02R</td>
+          <td class="num">◎14</td>
+          <td class="num">15-14-7</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 09:37</td>
+          <td>福島01R</td>
+          <td class="num">◎4</td>
+          <td class="num">5-10-12</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 15:37</td>
+          <td>函館12R</td>
+          <td class="num">◎4</td>
+          <td class="num">4-7-10</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 14:52</td>
+          <td>函館11R</td>
+          <td class="num">◎2</td>
+          <td class="num">11-6-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 14:17</td>
+          <td>函館10R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-7-11</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 13:42</td>
+          <td>函館09R</td>
+          <td class="num">◎13</td>
+          <td class="num">16-3-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 13:12</td>
+          <td>函館08R</td>
+          <td class="num">◎8</td>
+          <td class="num">4-2-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/5 12:42</td>
+          <td>函館07R</td>
+          <td class="num">◎8</td>
+          <td class="num">7-8-2</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/5 12:12</td>
+          <td>函館06R</td>
+          <td class="num">◎12</td>
+          <td class="num">6-16-12</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 10:52</td>
+          <td>函館04R</td>
+          <td class="num">◎10</td>
+          <td class="num">16-2-13</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/5 10:22</td>
+          <td>函館03R</td>
+          <td class="num">◎13</td>
+          <td class="num">11-1-13</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/5 09:52</td>
+          <td>函館02R</td>
+          <td class="num">◎10</td>
+          <td class="num">10-3-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/5 09:22</td>
+          <td>函館01R</td>
+          <td class="num">◎6</td>
+          <td class="num">4-7-2</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 15:37</td>
+          <td>函館12R</td>
+          <td class="num">◎6</td>
+          <td class="num">6-4-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 14:52</td>
+          <td>函館11R</td>
+          <td class="num">◎5</td>
+          <td class="num">8-12-14</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 14:17</td>
+          <td>函館10R</td>
+          <td class="num">◎2</td>
+          <td class="num">2-1-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 13:42</td>
+          <td>函館09R</td>
+          <td class="num">◎3</td>
+          <td class="num">6-7-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 13:12</td>
+          <td>函館08R</td>
+          <td class="num">◎3</td>
+          <td class="num">3-4-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 12:42</td>
+          <td>函館07R</td>
+          <td class="num">◎3</td>
+          <td class="num">10-3-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 12:12</td>
+          <td>函館06R</td>
+          <td class="num">◎5</td>
+          <td class="num">5-11-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">7/4 10:52</td>
+          <td>函館04R</td>
+          <td class="num">◎11</td>
+          <td class="num">14-2-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">7/4 10:22</td>
+          <td>函館03R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-6-10</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 09:52</td>
+          <td>函館02R</td>
+          <td class="num">◎3</td>
+          <td class="num">16-3-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">7/4 09:22</td>
+          <td>函館01R</td>
+          <td class="num">◎2</td>
+          <td class="num">7-2-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 19:01</td>
+          <td>函館12R</td>
+          <td class="num">◎4</td>
+          <td class="num">12-14-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 14:52</td>
+          <td>函館11R</td>
+          <td class="num">◎12</td>
+          <td class="num">2-10-3</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 14:17</td>
+          <td>函館10R</td>
+          <td class="num">◎4</td>
+          <td class="num">1-10-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 13:42</td>
+          <td>函館09R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-4-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 13:12</td>
+          <td>函館08R</td>
+          <td class="num">◎8</td>
+          <td class="num">9-5-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 12:42</td>
+          <td>函館07R</td>
+          <td class="num">◎7</td>
+          <td class="num">4-2-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 12:12</td>
+          <td>函館06R</td>
+          <td class="num">◎14</td>
+          <td class="num">14-10-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 11:42</td>
+          <td>函館05R</td>
+          <td class="num">◎2</td>
+          <td class="num">2-1-3</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 10:52</td>
+          <td>函館04R</td>
+          <td class="num">◎10</td>
+          <td class="num">14-11-12</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/28 10:22</td>
+          <td>函館03R</td>
+          <td class="num">◎9</td>
+          <td class="num">7-8-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/28 09:52</td>
+          <td>函館02R</td>
+          <td class="num">◎5</td>
+          <td class="num">3-8-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/28 09:22</td>
+          <td>函館01R</td>
+          <td class="num">◎7</td>
+          <td class="num">7-1-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 15:37</td>
+          <td>函館12R</td>
+          <td class="num">◎2</td>
+          <td class="num">2-5-6</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 14:52</td>
+          <td>函館11R</td>
+          <td class="num">◎2</td>
+          <td class="num">2-11-12</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 14:17</td>
+          <td>函館10R</td>
+          <td class="num">◎1</td>
+          <td class="num">3-2-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 13:42</td>
+          <td>函館09R</td>
+          <td class="num">◎4</td>
+          <td class="num">7-4-3</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 13:12</td>
+          <td>函館08R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-4-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 12:47</td>
+          <td>函館07R</td>
+          <td class="num">◎11</td>
+          <td class="num">11-8-5</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 12:12</td>
+          <td>函館06R</td>
+          <td class="num">◎5</td>
+          <td class="num">5-9-8</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 11:42</td>
+          <td>函館05R</td>
+          <td class="num">◎1</td>
+          <td class="num">5-1-7</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/27 10:52</td>
+          <td>函館04R</td>
+          <td class="num">◎11</td>
+          <td class="num">14-13-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 10:22</td>
+          <td>函館03R</td>
+          <td class="num">◎9</td>
+          <td class="num">9-10-4</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/27 09:52</td>
+          <td>函館02R</td>
+          <td class="num">◎2</td>
+          <td class="num">10-2-7</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/27 09:22</td>
+          <td>函館01R</td>
+          <td class="num">◎15</td>
+          <td class="num">15-10-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/21 15:36</td>
+          <td>函館12R</td>
+          <td class="num">◎2</td>
+          <td class="num">2-6-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 12:11</td>
+          <td>函館06R</td>
+          <td class="num">◎4</td>
+          <td class="num">1-2-10</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 11:41</td>
+          <td>函館05R</td>
+          <td class="num">◎3</td>
+          <td class="num">1-3-6</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 10:51</td>
+          <td>函館04R</td>
+          <td class="num">◎11</td>
+          <td class="num">1-12-3</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 10:21</td>
+          <td>函館03R</td>
+          <td class="num">◎12</td>
+          <td class="num">8-7-12</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/21 09:51</td>
+          <td>函館02R</td>
+          <td class="num">◎8</td>
+          <td class="num">1-2-9</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/21 09:21</td>
+          <td>函館01R</td>
+          <td class="num">◎3</td>
+          <td class="num">8-11-3</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 15:36</td>
+          <td>函館12R</td>
+          <td class="num">◎10</td>
+          <td class="num">4-5-7</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 14:51</td>
+          <td>函館11R</td>
+          <td class="num">◎8</td>
+          <td class="num">10-3-6</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/20 14:16</td>
+          <td>函館10R</td>
+          <td class="num">◎6</td>
+          <td class="num">4-6-5</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 13:41</td>
+          <td>函館09R</td>
+          <td class="num">◎7</td>
+          <td class="num">9-2-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 13:12</td>
+          <td>函館08R</td>
+          <td class="num">◎2</td>
+          <td class="num">10-5-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 12:42</td>
+          <td>函館07R</td>
+          <td class="num">◎5</td>
+          <td class="num">2-14-8</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 12:12</td>
+          <td>函館06R</td>
+          <td class="num">◎3</td>
+          <td class="num">4-1-10</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 11:41</td>
+          <td>函館05R</td>
+          <td class="num">◎3</td>
+          <td class="num">2-6-4</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 10:51</td>
+          <td>函館04R</td>
+          <td class="num">◎2</td>
+          <td class="num">3-9-11</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/20 10:21</td>
+          <td>函館03R</td>
+          <td class="num">◎10</td>
+          <td class="num">10-1-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 09:52</td>
+          <td>函館02R</td>
+          <td class="num">◎3</td>
+          <td class="num">7-11-1</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="lost">
+          <td class="ts">6/20 09:21</td>
+          <td>函館01R</td>
+          <td class="num">◎2</td>
+          <td class="num">13-8-16</td>
+          <td class="icon-cell">—</td>
+        </tr>
+        <tr class="placed">
+          <td class="ts">6/15 21:26</td>
+          <td>中山京1R</td>
+          <td class="num">◎1</td>
+          <td class="num">3-7-1</td>
+          <td class="icon-cell">✅</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/15 15:30</td>
+          <td>中山11R</td>
+          <td class="num">◎1</td>
+          <td class="num">1-4-7</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+        <tr class="won">
+          <td class="ts">6/15 09:00</td>
+          <td>中山京1R</td>
+          <td class="num">◎3</td>
+          <td class="num">3-7-2</td>
+          <td class="icon-cell">🥇</td>
+        </tr>
+  </table>
+
+  <div class="note">
+    <b>集計方法：</b>◎（本命）が3着以内に入れば複勝的中、1着なら勝利。
+    100円均等買いの場合の実払戻ベース回収率は 単勝 75.0% / 複勝 71.0%（199レース）。
+    バックテスト（過去3,264レース）では ◎軸三連単2点で回収率133%を記録しており、
+    券種・買い方の選択が成績を大きく左右します。
+  </div>
+
+  <footer>最終更新: 2026-07-09 13:45 ／ データ出典: JRA・netkeiba</footer>
+</div>
+</body>
+</html>
