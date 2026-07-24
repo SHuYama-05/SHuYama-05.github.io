@@ -60,6 +60,11 @@ tr:last-child td { border-bottom: none; }
 .log-table .icon-cell { text-align: center; white-space: nowrap; }
 .log-table tr.lost td { color: var(--ink-3); }
 .log-table .pay { color: var(--good); font-size: .75rem; font-weight: 700; margin-left: 4px; }
+.hoshi { color: var(--ink-3); font-size: .78rem; }
+.hoshi.hit { color: var(--accent); font-weight: 700; }
+tr.hoshi-hit td { color: var(--ink); }
+.h2-sub { font-size: .75rem; font-weight: 400; color: var(--ink-2); margin-left: 8px; }
+body.hits-only tr.hoshi-hit { display: table-row; }
 
 .log-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .filter { font-size: .78rem; color: var(--ink-2); white-space: nowrap; cursor: pointer;
@@ -96,10 +101,10 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
   その全件をここで照合・公開しています。当たった予想だけを選んで見せることはありません。</p>
 
   <div class="kpis">
-    <div class="kpi hero"><div class="v">54.0%</div><div class="l">◎複勝率（3着以内）</div></div>
-    <div class="kpi"><div class="v">31.4%</div><div class="l">◎勝率（1着）</div></div>
-    <div class="kpi"><div class="v">239R</div><div class="l">検証レース数（全公開）</div></div>
-    <div class="kpi"><div class="v">57%</div><div class="l">直近週の◎複勝率</div></div>
+    <div class="kpi hero"><div class="v">53.0%</div><div class="l">◎複勝率（3着以内）</div></div>
+    <div class="kpi"><div class="v">30.2%</div><div class="l">◎勝率（1着）</div></div>
+    <div class="kpi"><div class="v">268R</div><div class="l">検証レース数（全公開）</div></div>
+    <div class="kpi"><div class="v">45%</div><div class="l">直近週の◎複勝率</div></div>
   </div>
 
   <h2>週別成績</h2>
@@ -134,6 +139,13 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <td class="num">21 <span class="sub">(57%)</span></td>
           <td class="barcell"><div class="bar" style="width:57%"></div></td>
         </tr>
+        <tr>
+          <td class="wk">7/13〜7/19</td>
+          <td class="num">29R</td>
+          <td class="num">6 <span class="sub">(21%)</span></td>
+          <td class="num">13 <span class="sub">(45%)</span></td>
+          <td class="barcell"><div class="bar" style="width:45%"></div></td>
+        </tr>
   </table>
 
   <h2>◎1着 好配当ハイライト</h2>
@@ -155,12 +167,245 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <span class="hi-pay">単勝 500円</span></li>
   </ul>
 
+  <h2>☆穴馬 的中ハイライト <span class="h2-sub">指名35レース中 12的中（34%）</span></h2>
+  <ul class="hi-list">
+        <li><span class="hi-date">7/19</span> 小倉06R
+          ☆11番 → <b>3着内</b>
+          <span class="hi-pay">複勝 790円</span></li>
+        <li><span class="hi-date">6/21</span> 函館04R
+          ☆3番 → <b>3着内</b>
+          <span class="hi-pay">複勝 740円</span></li>
+        <li><span class="hi-date">7/12</span> 小倉12R
+          ☆17番 → <b>3着内</b>
+          <span class="hi-pay">複勝 720円</span></li>
+        <li><span class="hi-date">6/27</span> 福島12R
+          ☆2番 → <b>3着内</b>
+          <span class="hi-pay">複勝 550円</span></li>
+        <li><span class="hi-date">7/19</span> 函館05R
+          ☆4番 → <b>3着内</b>
+          <span class="hi-pay">複勝 480円</span></li>
+  </ul>
+
   <div class="log-head">
     <h2>全予想ログ（発走前タイムスタンプ付き）</h2>
     <label class="filter"><input type="checkbox" id="hits-only"> 的中のみ表示</label>
   </div>
   
     <details class="day" open>
+      <summary>
+        <span class="day-date">7/19(日)</span>
+        <span class="day-stats">29R ／ ◎1着 <b>6</b> ／ 3着内 <b>13</b> (45%)</span>
+        <span class="day-bar"><span style="width:45%"></span></span>
+      </summary>
+      <table class="log-table">
+        <tr><th>予想時刻</th><th>レース</th><th>本命</th><th>結果(1-2-3着)</th><th>判定</th></tr>
+        
+          <tr class="won">
+            <td class="ts">16:02</td>
+            <td>小倉12R</td>
+            <td class="num">◎7</td>
+            <td class="num">7-2-4</td>
+            <td class="icon-cell">🥇<span class="pay">220円</span></td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">15:17</td>
+            <td>小倉11R</td>
+            <td class="num">◎17</td>
+            <td class="num">1-17-18</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">14:42</td>
+            <td>小倉10R</td>
+            <td class="num">◎14 <span class="hoshi">☆12</span></td>
+            <td class="num">4-1-7</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">14:08</td>
+            <td>小倉09R</td>
+            <td class="num">◎3</td>
+            <td class="num">7-3-6</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">13:32</td>
+            <td>小倉08R</td>
+            <td class="num">◎9</td>
+            <td class="num">12-14-7</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="hoshi-hit">
+            <td class="ts">13:02</td>
+            <td>小倉07R</td>
+            <td class="num">◎2 <span class="hoshi hit">☆13</span></td>
+            <td class="num">1-10-13</td>
+            <td class="icon-cell">—<span class="pay">⭐360円</span></td>
+          </tr>
+          <tr class="hoshi-hit">
+            <td class="ts">12:33</td>
+            <td>小倉06R</td>
+            <td class="num">◎4 <span class="hoshi hit">☆11</span></td>
+            <td class="num">13-6-11</td>
+            <td class="icon-cell">—<span class="pay">⭐790円</span></td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">12:02</td>
+            <td>小倉05R</td>
+            <td class="num">◎2</td>
+            <td class="num">7-3-6</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">11:12</td>
+            <td>小倉04R</td>
+            <td class="num">◎11</td>
+            <td class="num">8-3-11</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">10:42</td>
+            <td>小倉03R</td>
+            <td class="num">◎7</td>
+            <td class="num">12-14-6</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">15:47</td>
+            <td>福島12R</td>
+            <td class="num">◎7</td>
+            <td class="num">11-4-6</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">15:02</td>
+            <td>福島11R</td>
+            <td class="num">◎5</td>
+            <td class="num">2-7-14</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">14:27</td>
+            <td>福島10R</td>
+            <td class="num">◎4</td>
+            <td class="num">7-4-6</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">13:52</td>
+            <td>福島09R</td>
+            <td class="num">◎1 <span class="hoshi">☆10</span></td>
+            <td class="num">13-8-1</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">13:22</td>
+            <td>福島08R</td>
+            <td class="num">◎8</td>
+            <td class="num">13-3-6</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">12:52</td>
+            <td>福島07R</td>
+            <td class="num">◎4</td>
+            <td class="num">3-7-13</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="won">
+            <td class="ts">12:22</td>
+            <td>福島06R</td>
+            <td class="num">◎14</td>
+            <td class="num">14-6-10</td>
+            <td class="icon-cell">🥇<span class="pay">270円</span></td>
+          </tr>
+          <tr class="won">
+            <td class="ts">11:52</td>
+            <td>福島05R</td>
+            <td class="num">◎4</td>
+            <td class="num">4-11-9</td>
+            <td class="icon-cell">🥇<span class="pay">170円</span></td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">11:02</td>
+            <td>福島04R</td>
+            <td class="num">◎11</td>
+            <td class="num">2-5-9</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="won">
+            <td class="ts">10:32</td>
+            <td>福島03R</td>
+            <td class="num">◎8</td>
+            <td class="num">8-13-2</td>
+            <td class="icon-cell">🥇<span class="pay">190円</span></td>
+          </tr>
+          <tr class="won">
+            <td class="ts">15:37</td>
+            <td>函館12R</td>
+            <td class="num">◎4</td>
+            <td class="num">4-1-3</td>
+            <td class="icon-cell">🥇<span class="pay">330円</span></td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">14:52</td>
+            <td>函館11R</td>
+            <td class="num">◎11</td>
+            <td class="num">5-9-2</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">14:17</td>
+            <td>函館10R</td>
+            <td class="num">◎12</td>
+            <td class="num">9-12-14</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="won">
+            <td class="ts">13:42</td>
+            <td>函館09R</td>
+            <td class="num">◎9</td>
+            <td class="num">9-4-6</td>
+            <td class="icon-cell">🥇<span class="pay">150円</span></td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">13:12</td>
+            <td>函館08R</td>
+            <td class="num">◎3</td>
+            <td class="num">8-4-5</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">12:42</td>
+            <td>函館07R</td>
+            <td class="num">◎14</td>
+            <td class="num">4-6-10</td>
+            <td class="icon-cell">—</td>
+          </tr>
+          <tr class="placed">
+            <td class="ts">12:12</td>
+            <td>函館06R</td>
+            <td class="num">◎10</td>
+            <td class="num">1-9-10</td>
+            <td class="icon-cell">✅</td>
+          </tr>
+          <tr class="hoshi-hit">
+            <td class="ts">11:42</td>
+            <td>函館05R</td>
+            <td class="num">◎8 <span class="hoshi hit">☆4</span></td>
+            <td class="num">4-1-5</td>
+            <td class="icon-cell">—<span class="pay">⭐480円</span></td>
+          </tr>
+          <tr class="lost">
+            <td class="ts">10:52</td>
+            <td>函館04R</td>
+            <td class="num">◎7 <span class="hoshi">☆13</span></td>
+            <td class="num">8-3-11</td>
+            <td class="icon-cell">—</td>
+          </tr>
+      </table>
+    </details>
+    <details class="day">
       <summary>
         <span class="day-date">7/12(日)</span>
         <span class="day-stats">35R ／ ◎1着 <b>14</b> ／ 3着内 <b>21</b> (60%)</span>
@@ -172,9 +417,9 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="won">
             <td class="ts">15:47</td>
             <td>小倉12R</td>
-            <td class="num">◎8</td>
+            <td class="num">◎8 <span class="hoshi hit">☆17</span></td>
             <td class="num">8-15-17</td>
-            <td class="icon-cell">🥇<span class="pay">420円</span></td>
+            <td class="icon-cell">🥇<span class="pay">420円</span><span class="pay">⭐720円</span></td>
           </tr>
           <tr class="lost">
             <td class="ts">15:02</td>
@@ -249,7 +494,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">09:27</td>
             <td>小倉01R</td>
-            <td class="num">◎16</td>
+            <td class="num">◎16 <span class="hoshi">☆13</span></td>
             <td class="num">10-2-11</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -295,12 +540,12 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
             <td class="num">4-12-10</td>
             <td class="icon-cell">—</td>
           </tr>
-          <tr class="lost">
+          <tr class="hoshi-hit">
             <td class="ts">12:32</td>
             <td>福島06R</td>
-            <td class="num">◎11</td>
+            <td class="num">◎11 <span class="hoshi hit">☆12</span></td>
             <td class="num">12-6-10</td>
-            <td class="icon-cell">—</td>
+            <td class="icon-cell">—<span class="pay">⭐310円</span></td>
           </tr>
           <tr class="won">
             <td class="ts">12:02</td>
@@ -347,7 +592,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">14:52</td>
             <td>函館11R</td>
-            <td class="num">◎4</td>
+            <td class="num">◎4 <span class="hoshi">☆5</span></td>
             <td class="num">10-12-4</td>
             <td class="icon-cell">✅</td>
           </tr>
@@ -579,7 +824,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">12:22</td>
             <td>福島06R</td>
-            <td class="num">◎1</td>
+            <td class="num">◎1 <span class="hoshi">☆12</span></td>
             <td class="num">10-8-9</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -663,14 +908,14 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">12:12</td>
             <td>函館06R</td>
-            <td class="num">◎12</td>
+            <td class="num">◎12 <span class="hoshi">☆15</span></td>
             <td class="num">6-16-12</td>
             <td class="icon-cell">✅</td>
           </tr>
           <tr class="lost">
             <td class="ts">10:52</td>
             <td>函館04R</td>
-            <td class="num">◎10</td>
+            <td class="num">◎10 <span class="hoshi">☆15</span></td>
             <td class="num">16-2-13</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -709,7 +954,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">15:47</td>
             <td>小倉12R</td>
-            <td class="num">◎12</td>
+            <td class="num">◎12 <span class="hoshi">☆8</span></td>
             <td class="num">6-1-7</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -793,7 +1038,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">16:02</td>
             <td>福島12R</td>
-            <td class="num">◎14</td>
+            <td class="num">◎14 <span class="hoshi">☆15</span></td>
             <td class="num">13-10-16</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -821,7 +1066,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">13:32</td>
             <td>福島08R</td>
-            <td class="num">◎6</td>
+            <td class="num">◎6 <span class="hoshi">☆13</span></td>
             <td class="num">3-4-8</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -842,7 +1087,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">12:02</td>
             <td>福島05R</td>
-            <td class="num">◎9</td>
+            <td class="num">◎9 <span class="hoshi">☆2</span></td>
             <td class="num">1-10-7</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -863,7 +1108,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">10:12</td>
             <td>福島02R</td>
-            <td class="num">◎3</td>
+            <td class="num">◎3 <span class="hoshi">☆13</span></td>
             <td class="num">2-7-1</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -940,7 +1185,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">09:52</td>
             <td>函館02R</td>
-            <td class="num">◎3</td>
+            <td class="num">◎3 <span class="hoshi">☆13</span></td>
             <td class="num">16-3-5</td>
             <td class="icon-cell">✅</td>
           </tr>
@@ -1056,7 +1301,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">15:17</td>
             <td>福島11R</td>
-            <td class="num">◎12</td>
+            <td class="num">◎12 <span class="hoshi">☆3</span></td>
             <td class="num">13-8-5</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1133,7 +1378,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">14:52</td>
             <td>函館11R</td>
-            <td class="num">◎12</td>
+            <td class="num">◎12 <span class="hoshi">☆15</span></td>
             <td class="num">2-10-3</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1161,7 +1406,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">12:42</td>
             <td>函館07R</td>
-            <td class="num">◎7</td>
+            <td class="num">◎7 <span class="hoshi">☆1</span></td>
             <td class="num">4-2-9</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1182,7 +1427,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">10:52</td>
             <td>函館04R</td>
-            <td class="num">◎10</td>
+            <td class="num">◎10 <span class="hoshi">☆16</span></td>
             <td class="num">14-11-12</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1277,7 +1522,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">11:02</td>
             <td>小倉04R</td>
-            <td class="num">◎8</td>
+            <td class="num">◎8 <span class="hoshi">☆10</span></td>
             <td class="num">4-8-5</td>
             <td class="icon-cell">✅</td>
           </tr>
@@ -1302,12 +1547,12 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
             <td class="num">1-2-5</td>
             <td class="icon-cell">🥇<span class="pay">110円</span></td>
           </tr>
-          <tr class="lost">
+          <tr class="hoshi-hit">
             <td class="ts">16:06</td>
             <td>福島12R</td>
-            <td class="num">◎15</td>
+            <td class="num">◎15 <span class="hoshi hit">☆2</span></td>
             <td class="num">6-2-7</td>
-            <td class="icon-cell">—</td>
+            <td class="icon-cell">—<span class="pay">⭐550円</span></td>
           </tr>
           <tr class="won">
             <td class="ts">15:18</td>
@@ -1333,9 +1578,9 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">13:32</td>
             <td>福島08R</td>
-            <td class="num">◎13</td>
+            <td class="num">◎13 <span class="hoshi hit">☆9</span></td>
             <td class="num">2-9-13</td>
-            <td class="icon-cell">✅</td>
+            <td class="icon-cell">✅<span class="pay">⭐200円</span></td>
           </tr>
           <tr class="lost">
             <td class="ts">13:02</td>
@@ -1417,14 +1662,14 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="won">
             <td class="ts">13:12</td>
             <td>函館08R</td>
-            <td class="num">◎1</td>
+            <td class="num">◎1 <span class="hoshi hit">☆2</span></td>
             <td class="num">1-4-2</td>
-            <td class="icon-cell">🥇<span class="pay">240円</span></td>
+            <td class="icon-cell">🥇<span class="pay">240円</span><span class="pay">⭐220円</span></td>
           </tr>
           <tr class="won">
             <td class="ts">12:47</td>
             <td>函館07R</td>
-            <td class="num">◎11</td>
+            <td class="num">◎11 <span class="hoshi">☆1</span></td>
             <td class="num">11-8-5</td>
             <td class="icon-cell">🥇<span class="pay">270円</span></td>
           </tr>
@@ -1516,12 +1761,12 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
             <td class="num">15-5-6</td>
             <td class="icon-cell">✅</td>
           </tr>
-          <tr class="lost">
+          <tr class="hoshi-hit">
             <td class="ts">10:31</td>
             <td>阪神03R</td>
-            <td class="num">◎5</td>
+            <td class="num">◎5 <span class="hoshi hit">☆1</span></td>
             <td class="num">15-1-11</td>
-            <td class="icon-cell">—</td>
+            <td class="icon-cell">—<span class="pay">⭐250円</span></td>
           </tr>
           <tr class="lost">
             <td class="ts">10:01</td>
@@ -1607,12 +1852,12 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
             <td class="num">1-3-6</td>
             <td class="icon-cell">✅</td>
           </tr>
-          <tr class="lost">
+          <tr class="hoshi-hit">
             <td class="ts">10:51</td>
             <td>函館04R</td>
-            <td class="num">◎11</td>
+            <td class="num">◎11 <span class="hoshi hit">☆3</span></td>
             <td class="num">1-12-3</td>
-            <td class="icon-cell">—</td>
+            <td class="icon-cell">—<span class="pay">⭐740円</span></td>
           </tr>
           <tr class="placed">
             <td class="ts">10:21</td>
@@ -1649,7 +1894,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">15:46</td>
             <td>阪神12R</td>
-            <td class="num">◎3</td>
+            <td class="num">◎3 <span class="hoshi">☆5</span></td>
             <td class="num">12-8-18</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1733,7 +1978,7 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="lost">
             <td class="ts">16:01</td>
             <td>東京12R</td>
-            <td class="num">◎10</td>
+            <td class="num">◎10 <span class="hoshi">☆8</span></td>
             <td class="num">12-1-2</td>
             <td class="icon-cell">—</td>
           </tr>
@@ -1912,21 +2157,21 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
           <tr class="placed">
             <td class="ts">21:26</td>
             <td>中山京1R</td>
-            <td class="num">◎1</td>
+            <td class="num">◎1 <span class="hoshi hit">☆7</span></td>
             <td class="num">3-7-1</td>
             <td class="icon-cell">✅</td>
           </tr>
           <tr class="won">
             <td class="ts">15:30</td>
             <td>中山11R</td>
-            <td class="num">◎1</td>
+            <td class="num">◎1 <span class="hoshi hit">☆7</span></td>
             <td class="num">1-4-7</td>
             <td class="icon-cell">🥇</td>
           </tr>
           <tr class="won">
             <td class="ts">09:00</td>
             <td>中山京1R</td>
-            <td class="num">◎3</td>
+            <td class="num">◎3 <span class="hoshi">☆9</span></td>
             <td class="num">3-7-2</td>
             <td class="icon-cell">🥇</td>
           </tr>
@@ -1935,12 +2180,12 @@ footer { margin-top: 24px; font-size: .72rem; color: var(--ink-3); text-align: c
 
   <div class="note">
     <b>集計方法：</b>◎（本命）が3着以内に入れば複勝的中、1着なら勝利。
-    100円均等買いの場合の実払戻ベース回収率は 単勝 80.4% / 複勝 72.8%（236レース）。
+    100円均等買いの場合の実払戻ベース回収率は 単勝 76.6% / 複勝 71.3%（265レース）。
     バックテスト（過去3,264レース）では ◎軸三連単2点で回収率133%を記録しており、
     券種・買い方の選択が成績を大きく左右します。
   </div>
 
-  <footer>最終更新: 2026-07-12 17:40 ／ データ出典: JRA・netkeiba</footer>
+  <footer>最終更新: 2026-07-25 01:20 ／ データ出典: JRA・netkeiba</footer>
 </div>
 <script>
 document.getElementById('hits-only').addEventListener('change', function() {
